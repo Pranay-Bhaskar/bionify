@@ -3,6 +3,7 @@ import logging
 import fovea
 
 fovea.set_prescription(0.6)
+fovea.set_style(bold=True, color="magenta")
 
 print("Running test sequence. You should see bold text formatting below...")
 

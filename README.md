@@ -1,20 +1,20 @@
-<p align="center">
-  <img src="assets/logo.png" alt="Fovea Logo" width="180"/>
-</p>
+<div align="center">
 
-<h1 align="center">Fovea</h1>
+  <img src="assets/bionify_logo.png" alt="Bionify Logo" width="180"/>
 
-[![PyPI version](https://img.shields.io/pypi/v/fovea.svg)](https://pypi.org/project/fovea/)
-[![Python versions](https://img.shields.io/pypi/pyversions/fovea.svg)](https://pypi.org/project/fovea/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![PyPI version](https://img.shields.io/pypi/v/bionify.svg)](https://pypi.org/project/bionify/)
+  [![Python versions](https://img.shields.io/pypi/pyversions/bionify.svg)](https://pypi.org/project/bionify/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Fovea** is a lightning-fast, C++ powered terminal formatter that applies Bionic Reading algorithms to your Python tracebacks and logs.
+  **Bionify** is a lightning-fast, C++ powered terminal formatter that applies Bionic Reading algorithms to your Python tracebacks and logs.
 
-By strategically bolding the first half of words, Fovea guides your eyes through massive walls of terminal text, allowing you to parse crash logs, errors, and system outputs in a fraction of the time.
+  By strategically bolding the first half of words, Bionify guides your eyes through massive walls of terminal text, allowing you to parse crash logs, errors, and system outputs in a fraction of the time.
 
-<p align="center">
-  <img src="assets/demo.png" alt="Fovea Terminal Output Demo" width="800"/>
-</p>
+  <p align="center">
+    <img src="assets/demo.png" alt="Bionify Terminal Output Demo" width="800"/>
+  </p>
+
+</div>
 
 ## Features
 
@@ -29,7 +29,7 @@ By strategically bolding the first half of words, Fovea guides your eyes through
 Currently available for Windows (64-bit).
 
 ```bash
-pip install fovea
+pip install bionify
 ```
 
 ## Quick Start
@@ -37,7 +37,7 @@ pip install fovea
 The easiest way to use Fovea is to simply import it at the top of your entry-point file. It will automatically hook into `sys.excepthook` and `sys.stderr`.
 
 ```python
-import fovea
+import bionify
 
 # Fovea is now active! Any unhandled exceptions will be styled.
 raise RuntimeError("This traceback will be styled for rapid reading!")
@@ -50,25 +50,25 @@ raise RuntimeError("This traceback will be styled for rapid reading!")
 Fovea defaults to Bold Cyan with a 50% reading intensity. You can easily adjust this to match your terminal theme:
 
 ```python
-import fovea
+import bionify
 
 # Change the fixation intensity (0.1 to 1.0)
-fovea.set_prescription(0.6)
+bionify.set_prescription(0.6)
 
 # Change the color (cyan, magenta, yellow, red, green, blue, white)
-fovea.set_style(bold=True, color="magenta")
+bionify.set_style(bold=True, color="magenta")
 
 # Power user? Pass your own raw ANSI escape sequences
-fovea.set_color_ansi(prefix="\033[1;95m", suffix="\033[0m")
+bionify.set_color_ansi(prefix="\033[1;95m", suffix="\033[0m")
 ```
 
 ### Using with the logging Library
 
-If you want to apply Fovea to your standard Python logs, use the provided `BionicFormatter`:
+If you want to apply Bionify to your standard Python logs, use the provided `BionicFormatter`:
 
 ```python
 import logging
-from fovea.hook import BionicFormatter
+from bionify.hook import BionicFormatter
 
 logger = logging.getLogger("MyBackend")
 handler = logging.StreamHandler()
@@ -83,7 +83,7 @@ logger.info("Database connection established successfully.")
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Pranay-Bhaskar/fovea/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Pranay-Bhaskar/bionify/issues).
 
 ## License
 

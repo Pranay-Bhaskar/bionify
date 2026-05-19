@@ -9,19 +9,17 @@ endif()
 find_package(Python 3.9 REQUIRED COMPONENTS Interpreter Development.Module)
 find_package(nanobind CONFIG REQUIRED)
 
-nanobind_add_module(fovea_ext src/fovea_ext.cpp)
+nanobind_add_module(bionify_ext src/bionify_ext.cpp)
 
-# Robust installation directives covering all operating systems and output artifacts
-install(TARGETS fovea_ext
-    LIBRARY DESTINATION fovea
-    RUNTIME DESTINATION fovea
-    ARCHIVE DESTINATION fovea
+install(TARGETS bionify_ext
+    LIBRARY DESTINATION bionify
+    RUNTIME DESTINATION bionify
+    ARCHIVE DESTINATION bionify
 )
 
-# Ensure the Python source code is explicitly bundled alongside the compiled binary
 install(FILES
-    src/fovea/__init__.py
-    src/fovea/_core.py
-    src/fovea/hook.py
-    DESTINATION fovea
+    src/bionify/__init__.py
+    src/bionify/_core.py
+    src/bionify/hook.py
+    DESTINATION bionify
 )

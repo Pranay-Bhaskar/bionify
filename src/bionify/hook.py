@@ -3,18 +3,16 @@ import traceback
 import logging
 from typing import TextIO, Any
 
-from . import fovea_ext
+from . import bionify_ext
 from ._core import get_intensity, get_ansi_tags
 
 _original_excepthook = sys.excepthook
 
 def _format_text(data: str) -> str:
     prefix, suffix = get_ansi_tags()
-    return fovea_ext.format_bionic_text(data, get_intensity(), prefix, suffix)
+    return bionify_ext.format_bionic_text(data, get_intensity(), prefix, suffix)
 
-# FEATURE 2: Native Logging Formatter
 class BionicFormatter(logging.Formatter):
-    """A standard Python logging formatter that applies Fovea bionic reading."""
     def format(self, record):
         msg = super().format(record)
         return _format_text(msg)
@@ -25,18 +23,14 @@ def bionic_excepthook(exc_type, exc_value, exc_traceback):
         return
 
     tb_lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
-    
     styled_traceback = ""
     for line in tb_lines:
-        # FEATURE 3: Stack Trace Noise Reduction
-        # If the error is inside a library, leave it gray and unformatted.
-        # If it is in the developer's local code, apply Fovea!
         if "site-packages" in line or "lib\\python" in line.lower() or "lib/python" in line.lower():
-            styled_traceback += line 
+            styled_traceback += line
         else:
             styled_traceback += _format_text(line)
 
-    original_stderr = getattr(sys.stderr, '_original_stream', sys.stderr)
+    original_stderr = getattr(sys.stderr, "_original_stream", sys.stderr)
     original_stderr.write(styled_traceback)
     original_stderr.flush()
 

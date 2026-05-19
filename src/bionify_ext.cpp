@@ -16,7 +16,6 @@ std::string format_bionic_text(const std::string &input,
     const size_t n = input.size();
 
     while (i < n) {
-        // Skip existing ANSI escape codes
         if (input[i] == '\033' && i + 1 < n && input[i + 1] == '[') {
             size_t ansi_start = i;
             i += 2;
@@ -26,35 +25,30 @@ std::string format_bionic_text(const std::string &input,
             continue;
         }
 
-        // Pass through whitespace
         if (std::isspace(static_cast<unsigned char>(input[i]))) {
             output += input[i++];
             continue;
         }
 
-        // Extract the next token (word)
         size_t start = i;
         while (i < n &&
                !std::isspace(static_cast<unsigned char>(input[i])) &&
                !(input[i] == '\033' && i + 1 < n && input[i + 1] == '[')) {
             i++;
         }
+
         std::string token = input.substr(start, i - start);
 
-        // FEATURE 4: Hyperlink & Path Protection
-        // If the token looks like a URL or an absolute Windows path, skip formatting
         if (token.find("://") != std::string::npos || token.find(":\\") != std::string::npos) {
             output += token;
             continue;
         }
 
-        // Calculate word length (alphanumeric only)
         size_t word_len = 0;
         for (char c : token) {
             if (std::isalnum(static_cast<unsigned char>(c))) word_len++;
         }
 
-        // Apply Bionic Formatting
         if (word_len > 0) {
             size_t fixation_len = static_cast<size_t>(std::ceil(word_len * intensity));
             if (fixation_len == 0) fixation_len = 1;
@@ -72,9 +66,8 @@ std::string format_bionic_text(const std::string &input,
     return output;
 }
 
-NB_MODULE(fovea_ext, m) {
-    m.doc() = "High-performance C++ backend for Fovea.";
-
+NB_MODULE(bionify_ext, m) {
+    m.doc() = "High-performance C++ backend for Bionify.";
     m.def("format_bionic_text",
           &format_bionic_text,
           nb::arg("input"),

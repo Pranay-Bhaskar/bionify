@@ -7,12 +7,12 @@ COLORS = {
     "red": "\033[91m",
     "green": "\033[92m",
     "blue": "\033[94m",
-    "white": "\033[97m"
+    "white": "\033[97m",
 }
 
-_intensity = float(os.getenv("FOVEA_INTENSITY", "0.5"))
-_prefix = "\033[1;96m"  # Default to Bold Cyan
-_suffix = "\033[0m"     # Default Reset
+_intensity = float(os.getenv("BIONIFY_INTENSITY", "0.5"))
+_prefix = "\033[1;96m"
+_suffix = "\033[0m"
 
 def set_prescription(intensity: float):
     global _intensity
@@ -22,7 +22,6 @@ def get_intensity() -> float:
     return _intensity
 
 def set_style(bold: bool = True, color: str = "cyan"):
-    """Easily set the aesthetic of the bionic text."""
     global _prefix, _suffix
     color_code = COLORS.get(color.lower(), "")
     bold_code = "\033[1m" if bold else ""
@@ -41,7 +40,6 @@ def set_style(bold: bool = True, color: str = "cyan"):
         _suffix = ""
 
 def set_color_ansi(prefix: str, suffix: str = "\033[0m"):
-    """Power-user API for custom ANSI codes."""
     global _prefix, _suffix
     _prefix = prefix
     _suffix = suffix

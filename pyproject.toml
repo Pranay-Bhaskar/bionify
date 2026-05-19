@@ -3,14 +3,14 @@ requires = ["scikit-build-core>=0.10", "nanobind>=1.9.2"]
 build-backend = "scikit_build_core.build"
 
 [project]
-name = "fovea"
+name = "bionify"
 version = "0.1.0"
 description = "A high-performance bionic reading traceback and log formatter for the terminal."
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
 authors = [
-  { name = "Pranay B", email = "b.pranay.git@gmail.com" }
+  { name = "Pranay", email = "b.pranay.git@gmail.com" }
 ]
 dependencies = [
   "colorama>=0.4.6"
@@ -25,14 +25,14 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Pranay-Bhaskar/fovea"
-Repository = "https://github.com/Pranay-Bhaskar/fovea.git"
-"Bug Tracker" = "https://github.com/Pranay-Bhaskar/fovea/issues"
+Homepage = "https://github.com/Pranay-Bhaskar/bionify"
+Repository = "https://github.com/Pranay-Bhaskar/bionify.git"
+"Bug Tracker" = "https://github.com/Pranay-Bhaskar/bionify/issues"
 
 [tool.scikit-build]
 minimum-version = "0.10"
 build-dir = "build/{wheel_tag}"
-wheel.packages = ["src/fovea"]
+wheel.packages = ["src/bionify"]
 
 [tool.scikit-build.cmake.define]
 CMAKE_CXX_STANDARD = "17"
