@@ -1,17 +1,25 @@
 <div align="center">
 
-  <img src="assets/bionify_logo.png" alt="Bionify Logo" width="180"/>
+  <img src="assets/bionify_logo.png" alt="Bionify Logo" width="220"/>
+
+
+
 
   [![PyPI version](https://img.shields.io/pypi/v/bionify.svg)](https://pypi.org/project/bionify/)
   [![Python versions](https://img.shields.io/pypi/pyversions/bionify.svg)](https://pypi.org/project/bionify/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
+
   **Bionify** is a lightning-fast, C++ powered terminal formatter that applies Bionic Reading algorithms to your Python tracebacks and logs.
 
   By strategically bolding the first half of words, Bionify guides your eyes through massive walls of terminal text, allowing you to parse crash logs, errors, and system outputs in a fraction of the time.
 
+
+
+
   <p align="center">
-    <img src="assets/demo.png" alt="Bionify Terminal Output Demo" width="800"/>
+    <img src="assets/demo.png" alt="Bionify Terminal Output Demo" width="400"/>
   </p>
 
 </div>
