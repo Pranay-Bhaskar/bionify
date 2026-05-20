@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/bionify_logo.png" alt="Bionify Logo" width="220"/>
+  <img src="https://raw.githubusercontent.com/Pranay-Bhaskar/fovea/main/assets/bionify_logo.png" alt="Bionify Logo" width="220"/>
 
 
 
@@ -8,7 +8,7 @@
   [![PyPI version](https://img.shields.io/pypi/v/bionify.svg)](https://pypi.org/project/bionify/)
   [![Python versions](https://img.shields.io/pypi/pyversions/bionify.svg)](https://pypi.org/project/bionify/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+  [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/Pranay-Bhaskar/bionify)
 
 
   **Bionify** is a lightning-fast, C++ powered terminal formatter that applies Bionic Reading algorithms to your Python tracebacks and logs.
@@ -19,7 +19,7 @@
 
 
   <p align="center">
-    <img src="assets/demo.png" alt="Bionify Terminal Output Demo" width="400"/>
+    <img src="https://raw.githubusercontent.com/Pranay-Bhaskar/fovea/main/assets/demo.png" alt="Bionify Terminal Output Demo" width="400"/>
   </p>
 
 </div>
@@ -47,7 +47,7 @@ The easiest way to use Fovea is to simply import it at the top of your entry-poi
 ```python
 import bionify
 
-# Fovea is now active! Any unhandled exceptions will be styled.
+# Bionify is now active! Any unhandled exceptions will be styled.
 raise RuntimeError("This traceback will be styled for rapid reading!")
 ```
 
