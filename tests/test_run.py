@@ -1,9 +1,9 @@
 import sys
 import logging
-import fovea
+import bionify
 
-fovea.set_prescription(0.6)
-fovea.set_style(bold=True, color="magenta")
+bionify.set_prescription(0.6)
+bionify.set_style(bold=True, color="magenta")
 
 print("Running test sequence. You should see bold text formatting below...")
 
