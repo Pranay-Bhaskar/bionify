@@ -9,6 +9,7 @@
   [![Python versions](https://img.shields.io/pypi/pyversions/bionify.svg)](https://pypi.org/project/bionify/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/Pranay-Bhaskar/bionify)
+  [![Downloads](https://static.pepy.tech/badge/bionify)](https://pepy.tech/project/bionify)
 
 
   **Bionify** is a lightning-fast, C++ powered terminal formatter that applies Bionic Reading algorithms to your Python tracebacks and logs.
